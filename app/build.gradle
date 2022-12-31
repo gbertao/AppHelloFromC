@@ -5,6 +5,7 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+    ndkVersion "25.1.8937393"
 
     defaultConfig {
         applicationId "com.giovanni.example.hellofromc"
@@ -23,6 +24,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+            version '3.22.1'
+        }
     }
 }
 
